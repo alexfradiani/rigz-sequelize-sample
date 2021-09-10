@@ -1,0 +1,14 @@
+{
+  "name": "firebase-sequelize",
+  "version": "1.0.0",
+  "description": "POC for Rigz Modelling Refactoring",
+  "main": "index.js",
+  "author": "Alexander Fradiani",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "7.32.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "prettier": "2.4.0"
+  }
+}
