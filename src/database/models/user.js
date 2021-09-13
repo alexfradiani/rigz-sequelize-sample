@@ -13,7 +13,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: 'User'
+      modelName: 'User',
+      paranoid: true // enable soft delete
     }
   );
   return User;
