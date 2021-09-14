@@ -6,8 +6,9 @@ const { UsersController } = require('./controllers/users.controller');
 const { CatalogsController } = require('./controllers/catalogs.controller');
 const { ProductsController } = require('./controllers/products.controller');
 const { PromosController } = require('./controllers/promos.controller');
+const { E2EController } = require('./controllers/e2e.controller');
 
-const { RATELIMIT } = require('./config/globals');
+const { RATELIMIT, IN_TESTING } = require('./config/globals');
 
 const app = express();
 app.use(express.json());
@@ -36,6 +37,12 @@ app.use('/products', productsCtrl.routes());
 
 const promosCtrl = new PromosController();
 app.use('/promos', promosCtrl.routes());
+
+// only available during testing
+if (IN_TESTING) {
+  const e2eCtrl = new E2EController();
+  app.use('/e2e', e2eCtrl.routes());
+}
 
 // generic error middleware handler
 app.use((err, _req, res, _next) => {

@@ -17,7 +17,10 @@ const RATELIMIT = {
   MAX_REQUESTS: parseInt(process.env.RATE_LIMIT_MAX_REQUESTS) || 10
 };
 
+const IN_TESTING = process.env.ENV === 'test';
+
 module.exports = {
   DB,
-  RATELIMIT
+  RATELIMIT,
+  IN_TESTING
 };
