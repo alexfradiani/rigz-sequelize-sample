@@ -1,0 +1,6 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "env": {
+    "apiUrl": "http://localhost:5001/quicktests-b86f7/us-central1/demoapp"
+  }
+}

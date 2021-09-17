@@ -1,4 +1,5 @@
 const express = require('express');
+var cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const { ErrorMiddleware } = require('./middlewares/error.middleware');
@@ -12,6 +13,7 @@ const { RATELIMIT, IN_TESTING } = require('./config/globals');
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 // set up security headers
 app.use(helmet());
 // rate limiter middleware
